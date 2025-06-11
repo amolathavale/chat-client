@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: chatclient
+
+  ai:
+    mcp:
+      client:
+        name: chatclient
+        initalized: true
+        request-timeout: 20s
+        type: sync
+        toolcallback.enabled: true
+        root-change-notification: true
+        sse:
+          connections:
+            server1:
+              url: http://localhost:8080
+              sse-endpoint: /api/v1/sse
+
+logging:
+  level:
+    io.modelcontextprotocol: TRACE
+    io.springframework.ai.mcp: TRACE
