@@ -1,8 +1,25 @@
+server:
+  port: 9090
+
 spring:
   application:
     name: chatclient
 
+  #  ai:
+  #    openai:
+  #        api-key: ${OPENAI_API_KEY}
+  #        chat:
+  #          project-id: proj_FHS0jO5kT02JiTvEbsXvADaF
+  #          organization_id: org-sHpKa8rszcNPvXmdbTSMK6z7
+  #          options:
+  #              model: gpt-4o-mini
   ai:
+    ollama:
+      chat:
+        options:
+          #              model: llama3.2
+          model: qwen3:4b
+          temperature: 0.2
     mcp:
       client:
         name: chatclient
